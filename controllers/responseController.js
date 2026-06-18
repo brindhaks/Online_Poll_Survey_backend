@@ -2,9 +2,7 @@ const Response = require('../models/Response');
 
 async function getAllResponses(req, res) {
     try {
-        const responses = await Response.find()
-            .populate('surveyId');
-
+        const responses = await Response.find().populate('surveyId');
         res.json(responses);
     }
     catch (err) {
